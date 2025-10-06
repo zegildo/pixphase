@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>PixPhase</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <!-- Parte esquerda: Frase -->
+        <div class="phrase-section">
+            <p class="phrase">{{ phrase }}</p>
+        </div>
+
+        <!-- Parte direita: QR Code + valores -->
+        <div class="qr-section">
+            <h3>Sua frase por {{ qr_value }}</h3>
+            <img src="/static/qrcode.png" alt="QR Code" class="qrcode">
+
+            <h4>Últimas atualizações:</h4>
+            <ul class="payment-list">
+                {% for p in payments %}
+                    <li>{{ p.name }} — {{ p.amount }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

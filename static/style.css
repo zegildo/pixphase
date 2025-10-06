@@ -1,0 +1,76 @@
+/* Reset básico e fonte */
+* {
+    box-sizing: border-box; /* evita overflow devido a padding/border */
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%; /* garante que body ocupe toda a altura da tela */
+    width: 100%;  /* garante largura total */
+    font-family: Helvetica, sans-serif;
+    background: #f9fafc;
+    overflow: hidden; /* evita scroll */
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    height: 100vh; /* altura total da tela */
+    width: 100vw;  /* largura total da tela */
+}
+
+.phrase-section {
+    flex: 0 0 80%; /* ocupa 80% da largura */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 2rem;
+    overflow: hidden; /* evita scroll interno se o texto for grande */
+}
+
+.phrase {
+    font-size: 8vw; /* tamanho responsivo baseado na largura da tela */
+    font-family: Helvetica, sans-serif;
+    font-weight: 400;
+    text-align: left;
+    color: #000000;
+    max-width: 90%; /* ajusta largura máxima para não estourar */
+    line-height: 1.2;
+    word-break: break-word; /* quebra palavras longas se necessário */
+}
+
+.qr-section {
+    flex: 0 0 20%; /* ocupa 20% da largura */
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* centraliza verticalmente */
+    padding: 1rem;
+    border-left: 2px solid #ddd;
+    overflow-y: auto; /* scroll interno se a lista ficar muito grande */
+}
+
+.qrcode {
+    width: 80%;
+    height: auto;
+    margin: 1rem 0;
+}
+
+.payment-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    text-align: left;
+    overflow-y: auto; /* scroll interno para a lista se necessário */
+    max-height: 40vh; /* limita altura da lista */
+}
+
+.payment-list li {
+    padding: 4px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 0.9rem;
+}
